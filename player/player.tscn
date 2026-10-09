@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bacjajttqg8pl"]
+
+[ext_resource type="Script" uid="uid://bf1u4bl40kfgg" path="res://player/player.gd" id="1_oul6g"]
+
+[node name="player" type="CharacterBody2D" unique_id=1969086595 node_paths=PackedStringArray("_spritr2d", "_animation")]
+script = ExtResource("1_oul6g")
+_spritr2d = NodePath("textura")
+_animation = NodePath("AnimationPlayer")
+
+[node name="textura" type="Sprite2D" parent="." unique_id=298569883]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=658569819]
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=1882961560]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1155417679]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=952655170]

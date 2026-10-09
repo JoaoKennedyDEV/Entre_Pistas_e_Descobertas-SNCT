@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d2x8b0a5uis3g"]
+
+[ext_resource type="PackedScene" uid="uid://bacjajttqg8pl" path="res://player/player.tscn" id="1_deu41"]
+[ext_resource type="PackedScene" uid="uid://bj6ghy4ykupo7" path="res://Terrain.tscn" id="2_u0s3o"]
+[ext_resource type="PackedScene" uid="uid://ddegghsvbdtbl" path="res://management/player.tscn" id="3_cfx2x"]
+
+[node name="Gamelevel" type="Node2D" unique_id=179007355]
+
+[node name="player" parent="." unique_id=1969086595 instance=ExtResource("1_deu41")]
+
+[node name="Node2D" parent="." unique_id=892291387 instance=ExtResource("2_u0s3o")]
+
+[node name="player" parent="Node2D" unique_id=1908264803 instance=ExtResource("3_cfx2x")]
