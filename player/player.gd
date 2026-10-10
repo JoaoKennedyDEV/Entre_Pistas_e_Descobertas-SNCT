@@ -1,47 +1,38 @@
 extends CharacterBody2D
-class_name BaseCharacter
 
-@export var speed := 110.0
+@export var speed := 100.0
+
+@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var interact_area: Area2D = $InteractArea
 
-@export_category("objects")
-@export var _spritr2d: Sprite2D
-@export var _animation: AnimationPlayer
+# Seus sprites têm 6 direções: Down, Up, Left_Down, Left_Up, Right_Down, Right_Up
+var vertical := "Down"
+var horizontal := ""   # "", "Left" ou "Right"
+
 
 func _physics_process(_delta: float) -> void:
-	_move()
-	_pular()
-	_animate()
-	
-func _move() -> void:
 	var dir := Input.get_vector("left", "right", "up", "down")
 	velocity = dir * speed
 	move_and_slide()
-	
-func _pular() -> void:
-	if Input.is_action_just_pressed("jump"):
-		if velocity.x < 0:
-			_animation.play("jump left down")
-			return
-	
 
-func _animate() -> void:
-	if velocity.x > 0:
-		_animation.play("right down")
-		return
-	if velocity.x < 0:
-		_animation.play("left down")
-		return
-	if velocity.y > 0:
-		_animation.play("idle")
-		return
-	if velocity.y < 0:
-		_animation.play("up")
-		return
-	if velocity:
-		_animation.play("idle")
-		return
-		
+	if dir != Vector2.ZERO:
+		if dir.y != 0.0:
+			vertical = "Up" if dir.y < 0.0 else "Down"
+		if dir.x != 0.0:
+			horizontal = "Left" if dir.x < 0.0 else "Right"
+		else:
+			horizontal = ""
+		_play("walk_")
+	else:
+		_play("Idle_")
+
+
+func _play(prefix: String) -> void:
+	# Ex.: "walk_Down", "walk_Left_Up", "Idle_Right_Down"
+	var anim := prefix + (horizontal + "_" if horizontal != "" else "") + vertical
+	if sprite.animation != anim:
+		sprite.play(anim)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
