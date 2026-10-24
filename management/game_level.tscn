@@ -2,9 +2,197 @@
 
 [ext_resource type="PackedScene" uid="uid://bj6ghy4ykupo7" path="res://Terrain.tscn" id="1_cp3vr"]
 [ext_resource type="PackedScene" uid="uid://bacjajttqg8pl" path="res://player/player.tscn" id="2_fyo3i"]
+[ext_resource type="Script" uid="uid://b3o0vr25cig0n" path="res://management/game_level.gd" id="3_level"]
+[ext_resource type="PackedScene" uid="uid://bwuawihqvrusm" path="res://objects/door.tscn" id="4_door"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c00"]
+size = Vector2(32, 608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c01"]
+size = Vector2(32, 608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c02"]
+size = Vector2(192, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c03"]
+size = Vector2(704, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c04"]
+size = Vector2(704, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c05"]
+size = Vector2(192, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c06"]
+size = Vector2(96, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c07"]
+size = Vector2(139, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c08"]
+size = Vector2(190, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c09"]
+size = Vector2(93, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c10"]
+size = Vector2(47, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c11"]
+size = Vector2(23, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c12"]
+size = Vector2(240, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c13"]
+size = Vector2(30, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c14"]
+size = Vector2(32, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c15"]
+size = Vector2(32, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c16"]
+size = Vector2(448, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c17"]
+size = Vector2(192, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c18"]
+size = Vector2(160, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c19"]
+size = Vector2(91, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c20"]
+size = Vector2(43, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c21"]
+size = Vector2(142, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c22"]
+size = Vector2(106, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c23"]
+size = Vector2(71, 80)
 
 [node name="GameLevel" type="Node2D" unique_id=1754216436]
+script = ExtResource("3_level")
+start_door = NodePath("PortaEscritorio")
 
 [node name="Node2D" parent="." unique_id=892291387 instance=ExtResource("1_cp3vr")]
 
+[node name="Colisoes" type="StaticBody2D" parent="." unique_id=1879650717]
+
+[node name="SalaGrande_ParedeEsq" type="CollisionShape2D" parent="Colisoes" unique_id=2102748570]
+position = Vector2(-464, -80)
+shape = SubResource("RectangleShape2D_c00")
+
+[node name="SalaGrande_ParedeDir" type="CollisionShape2D" parent="Colisoes" unique_id=616272101]
+position = Vector2(496, -80)
+shape = SubResource("RectangleShape2D_c01")
+
+[node name="SalaGrande_ParedeBaixoEsq" type="CollisionShape2D" parent="Colisoes" unique_id=255931517]
+position = Vector2(-384, 208)
+shape = SubResource("RectangleShape2D_c02")
+
+[node name="SalaGrande_ParedeBaixoDir" type="CollisionShape2D" parent="Colisoes" unique_id=2048004803]
+position = Vector2(160, 208)
+shape = SubResource("RectangleShape2D_c03")
+
+[node name="SalaGrande_TopoEsq" type="CollisionShape2D" parent="Colisoes" unique_id=1726741207]
+position = Vector2(-128, -288)
+shape = SubResource("RectangleShape2D_c04")
+
+[node name="SalaGrande_TopoDir" type="CollisionShape2D" parent="Colisoes" unique_id=424673955]
+position = Vector2(416, -288)
+shape = SubResource("RectangleShape2D_c05")
+
+[node name="SalaGrande_FundoPorta" type="CollisionShape2D" parent="Colisoes" unique_id=2104258693]
+position = Vector2(272, -304)
+shape = SubResource("RectangleShape2D_c06")
+
+[node name="SalaGrande_Geladeiras" type="CollisionShape2D" parent="Colisoes" unique_id=1063089306]
+position = Vector2(-327.5, -176)
+shape = SubResource("RectangleShape2D_c07")
+
+[node name="SalaGrande_QuadroBranco" type="CollisionShape2D" parent="Colisoes" unique_id=214806229]
+position = Vector2(-143, -180)
+shape = SubResource("RectangleShape2D_c08")
+
+[node name="SalaGrande_Estante" type="CollisionShape2D" parent="Colisoes" unique_id=412642573]
+position = Vector2(16.5, -176)
+shape = SubResource("RectangleShape2D_c09")
+
+[node name="SalaGrande_BancadaDireita" type="CollisionShape2D" parent="Colisoes" unique_id=30191521]
+position = Vector2(456.5, 0)
+shape = SubResource("RectangleShape2D_c10")
+
+[node name="SalaGrande_Cadeira" type="CollisionShape2D" parent="Colisoes" unique_id=90120881]
+position = Vector2(421.5, 24)
+shape = SubResource("RectangleShape2D_c11")
+
+[node name="SalaGrande_MesaCentral" type="CollisionShape2D" parent="Colisoes" unique_id=167785293]
+position = Vector2(24, 26)
+shape = SubResource("RectangleShape2D_c12")
+
+[node name="SalaGrande_Lixeira" type="CollisionShape2D" parent="Colisoes" unique_id=1164529194]
+position = Vector2(408, 169.5)
+shape = SubResource("RectangleShape2D_c13")
+
+[node name="Escritorio_ParedeEsq" type="CollisionShape2D" parent="Colisoes" unique_id=977199979]
+position = Vector2(-464, 384)
+shape = SubResource("RectangleShape2D_c14")
+
+[node name="Escritorio_ParedeDir" type="CollisionShape2D" parent="Colisoes" unique_id=1214485510]
+position = Vector2(-48, 384)
+shape = SubResource("RectangleShape2D_c15")
+
+[node name="Escritorio_ParedeBaixo" type="CollisionShape2D" parent="Colisoes" unique_id=439178544]
+position = Vector2(-256, 528)
+shape = SubResource("RectangleShape2D_c16")
+
+[node name="Escritorio_TopoEsq" type="CollisionShape2D" parent="Colisoes" unique_id=1374757271]
+position = Vector2(-384, 272)
+shape = SubResource("RectangleShape2D_c17")
+
+[node name="Escritorio_TopoDir" type="CollisionShape2D" parent="Colisoes" unique_id=1835658165]
+position = Vector2(-112, 272)
+shape = SubResource("RectangleShape2D_c18")
+
+[node name="Escritorio_Geladeiras" type="CollisionShape2D" parent="Colisoes" unique_id=553932546]
+position = Vector2(-399.5, 328)
+shape = SubResource("RectangleShape2D_c19")
+
+[node name="Escritorio_Arquivo" type="CollisionShape2D" parent="Colisoes" unique_id=421561540]
+position = Vector2(-87.5, 328)
+shape = SubResource("RectangleShape2D_c20")
+
+[node name="Escritorio_BancadaMicroscopio" type="CollisionShape2D" parent="Colisoes" unique_id=1960923150]
+position = Vector2(-375, 441.5)
+shape = SubResource("RectangleShape2D_c21")
+
+[node name="Escritorio_MesaComputador" type="CollisionShape2D" parent="Colisoes" unique_id=1159266972]
+position = Vector2(-245, 449.5)
+shape = SubResource("RectangleShape2D_c22")
+
+[node name="Escritorio_Impressora" type="CollisionShape2D" parent="Colisoes" unique_id=1089230659]
+position = Vector2(-147.5, 440)
+shape = SubResource("RectangleShape2D_c23")
+
+[node name="PortaFuturo" parent="." unique_id=1675696400 instance=ExtResource("4_door")]
+position = Vector2(272, -192)
+room_rect = Rect2(-480, -384, 992, 928)
+locked = true
+
+[node name="PortaEscritorio" parent="." unique_id=847797086 instance=ExtResource("4_door")]
+position = Vector2(-240, 320)
+destination_path = NodePath("../Marker2D")
+room_rect = Rect2(-480, -384, 992, 928)
+
 [node name="Player" parent="." unique_id=1969086595 instance=ExtResource("2_fyo3i")]
+position = Vector2(-330, 365)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=111671707]
+position = Vector2(-243, 151)
