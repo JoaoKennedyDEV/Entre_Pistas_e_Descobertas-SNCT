@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bacjajttqg8pl" path="res://player/player.tscn" id="2_fyo3i"]
 [ext_resource type="Script" uid="uid://b3o0vr25cig0n" path="res://management/game_level.gd" id="3_level"]
 [ext_resource type="PackedScene" uid="uid://bwuawihqvrusm" path="res://objects/door.tscn" id="4_door"]
+[ext_resource type="Script" uid="uid://ckridibqvgh0d" path="res://management/post_it.gd" id="5_a0j3u"]
+[ext_resource type="Script" uid="uid://8ntr1wokat6t" path="res://management/post_it_2.gd" id="7_j5uqw"]
+[ext_resource type="PackedScene" uid="uid://d2btos010cw44" path="res://dialog/reading_text.tscn" id="8_t2tqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c00"]
 size = Vector2(32, 608)
@@ -76,6 +79,8 @@ size = Vector2(106, 109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c23"]
 size = Vector2(71, 80)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nibba"]
 
 [node name="GameLevel" type="Node2D" unique_id=1754216436]
 script = ExtResource("3_level")
@@ -191,8 +196,26 @@ position = Vector2(-240, 320)
 destination_path = NodePath("../Marker2D")
 room_rect = Rect2(-480, -384, 992, 928)
 
-[node name="Player" parent="." unique_id=1969086595 instance=ExtResource("2_fyo3i")]
+[node name="Player" parent="." unique_id=1969086595 groups=["player"] instance=ExtResource("2_fyo3i")]
 position = Vector2(-330, 365)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=111671707]
 position = Vector2(-243, 151)
+
+[node name="PostIt" type="Area2D" parent="." unique_id=485839118]
+script = ExtResource("5_a0j3u")
+dialog_scene = ExtResource("8_t2tqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PostIt" unique_id=1726814111]
+position = Vector2(-210, -158)
+shape = SubResource("CircleShape2D_nibba")
+debug_color = Color(0.6334148, 0.52851015, 0, 0.41960785)
+
+[node name="PostIt2" type="Area2D" parent="." unique_id=658180466]
+script = ExtResource("7_j5uqw")
+dialog_scene = ExtResource("8_t2tqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PostIt2" unique_id=1686256600]
+position = Vector2(-154, -157)
+shape = SubResource("CircleShape2D_nibba")
+debug_color = Color(0.6334148, 0.52851015, 0, 0.41960785)
