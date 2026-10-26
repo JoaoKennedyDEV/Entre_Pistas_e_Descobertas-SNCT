@@ -53,10 +53,13 @@ size = Vector2(96, 32)
 size = Vector2(95, 41.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_proximity_norte"]
-size = Vector2(96, 53)
+size = Vector2(96, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
 size = Vector2(56, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger_norte"]
+size = Vector2(56, 24)
 
 [node name="Door" type="Node2D" unique_id=1569833002]
 script = ExtResource("1_door")
@@ -80,7 +83,7 @@ position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_proximity")
 
 [node name="CollisionShapeNorte" type="CollisionShape2D" parent="Proximity" unique_id=36547878]
-position = Vector2(0, -116.5)
+position = Vector2(0, -125)
 shape = SubResource("RectangleShape2D_proximity_norte")
 
 [node name="Trigger" type="Area2D" parent="." unique_id=406809832]
@@ -88,6 +91,10 @@ shape = SubResource("RectangleShape2D_proximity_norte")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1128091254]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_trigger")
+
+[node name="CollisionShapeNorte" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(0, -136)
+shape = SubResource("RectangleShape2D_trigger_norte")
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1045173064]
 position = Vector2(0, 44)

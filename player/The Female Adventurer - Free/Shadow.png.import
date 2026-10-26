@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8u2b01xw8kva"
-path="res://.godot/imported/shadow.png-44b8386c1a8e4efb100eb91fa8057b9f.ctex"
+uid="uid://bcgtwh861gdqn"
+path="res://.godot/imported/Shadow.png-4c4518f158cd1cad1cef58c3440803c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/The Female Adventurer - Free/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-44b8386c1a8e4efb100eb91fa8057b9f.ctex"]
+source_file="res://player/The Female Adventurer - Free/Shadow.png"
+dest_files=["res://.godot/imported/Shadow.png-4c4518f158cd1cad1cef58c3440803c6.ctex"]
 
 [params]
 
