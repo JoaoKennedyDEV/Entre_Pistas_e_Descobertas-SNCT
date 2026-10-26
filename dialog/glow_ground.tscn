@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://boloemhscacw7"]
+
+[ext_resource type="Script" uid="uid://cfe7wowg02yxn" path="res://glow_ground.gd" id="1_x6tfl"]
+
+[node name="GlowGround" type="Node2D" unique_id=440163653]
+script = ExtResource("1_x6tfl")
