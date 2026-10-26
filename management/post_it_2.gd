@@ -39,15 +39,12 @@ func iniciar_dialogo() -> void:
 			"dialog": "\"A computação é a área que estuda como processar e armazenar informações usando máquinas.\"",
 		},
 		2: {
-			"dialog": "\"Para conseguir se comunicar com a maquina o ser humano utiliza as linguagens de programação, ",
+			"dialog": "\"Para conseguir se comunicar com a maquina o ser humano utiliza as linguagens de programação, que é transformada em linguagem binaria.\"",
 		},
 		3: {
-			"dialog": "que é transformada em linguagem binaria.\"",
-		},
-		4: {
 			"dialog": "\"A linguagem binaria consiste em somente dois valores 0 e 1\"",
 		},
-		5: {
+		4: {
 			"dialog": "\"Ou seja quando a energia está desligada o valor é 0, e quando estiver ligada é 1.\"",
 		}
 	}
