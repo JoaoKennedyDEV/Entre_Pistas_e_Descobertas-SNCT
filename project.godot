@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mnc"
-run/main_scene="uid://bu3q18o8ubark"
+run/main_scene="uid://g140xgyi5jiu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

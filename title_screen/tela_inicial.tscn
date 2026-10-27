@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://g140xgyi5jiu"]
+
+[ext_resource type="Texture2D" uid="uid://yv4can2s0piy" path="res://title_screen/Fundo Inicial.png" id="1_vrwra"]
+[ext_resource type="Texture2D" uid="uid://dw7xwcboj3ka8" path="res://title_screen/Título.png" id="2_q1oro"]
+[ext_resource type="Texture2D" uid="uid://b66pusxgb1o1g" path="res://title_screen/Jogar.png" id="3_8sa8j"]
+[ext_resource type="Script" uid="uid://dn6iwj8ky6a5c" path="res://title_screen/control_play.gd" id="4_1vgj0"]
+[ext_resource type="Texture2D" uid="uid://pfb0h2pg04kg" path="res://title_screen/Créditos.png" id="4_eg5xv"]
+[ext_resource type="Texture2D" uid="uid://d0ga0o7paqanh" path="res://title_screen/Jogar Clicável_.png" id="5_g1pw1"]
+[ext_resource type="Texture2D" uid="uid://cr0dxyynuyk7b" path="res://title_screen/Sair.png" id="5_kjvm2"]
+[ext_resource type="AudioStream" uid="uid://ruoiyxgifp3x" path="res://title_screen/Musica Tela Inicial.mp3" id="6_eg5xv"]
+[ext_resource type="Script" uid="uid://dlefh4j3mdm53" path="res://title_screen/control_credits.gd" id="7_1hpsn"]
+[ext_resource type="Texture2D" uid="uid://chwsjongwpuk3" path="res://title_screen/Sair Clicável_.png" id="8_g1pw1"]
+[ext_resource type="Texture2D" uid="uid://j3bpedolycbj" path="res://title_screen/Créditos Clicável_.png" id="8_hc522"]
+[ext_resource type="Script" uid="uid://bk07ollnsqovj" path="res://title_screen/control_exit.gd" id="9_1hpsn"]
+
+[node name="TelaInicial" type="Control" unique_id=1820896254]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ButtonPlay" type="TextureRect" parent="." unique_id=1026664632]
+z_index = 200
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("3_8sa8j")
+expand_mode = 1
+
+[node name="ControlPlay" type="Control" parent="ButtonPlay" unique_id=1441425363]
+z_index = 10
+custom_minimum_size = Vector2(150, 30)
+anchors_preset = 0
+offset_left = 342.0
+offset_top = 157.0
+offset_right = 494.0
+offset_bottom = 187.0
+script = ExtResource("4_1vgj0")
+textura_normal = ExtResource("3_8sa8j")
+textura_hover = ExtResource("5_g1pw1")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1751340562]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vrwra")
+expand_mode = 2
+
+[node name="BgTitle" type="TextureRect" parent="." unique_id=1033201912]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 200.0
+texture = ExtResource("2_q1oro")
+expand_mode = 1
+
+[node name="ButtonCredits" type="TextureRect" parent="." unique_id=2046097072]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_eg5xv")
+expand_mode = 1
+
+[node name="ControlCredits" type="Control" parent="ButtonCredits" unique_id=434584704]
+z_index = 10
+custom_minimum_size = Vector2(150, 30)
+anchors_preset = 0
+offset_left = 342.0
+offset_top = 199.0
+offset_right = 494.0
+offset_bottom = 229.0
+script = ExtResource("7_1hpsn")
+textura_normal = ExtResource("4_eg5xv")
+textura_hover = ExtResource("8_hc522")
+
+[node name="ButtonExit" type="TextureRect" parent="." unique_id=1762296000]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_kjvm2")
+expand_mode = 1
+
+[node name="ControlExit" type="Control" parent="ButtonExit" unique_id=1266535192]
+z_index = 10
+custom_minimum_size = Vector2(150, 30)
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 239.0
+offset_right = 492.0
+offset_bottom = 269.0
+script = ExtResource("9_1hpsn")
+textura_normal = ExtResource("5_kjvm2")
+textura_hover = ExtResource("8_g1pw1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=978252154]
+stream = ExtResource("6_eg5xv")
+autoplay = true
