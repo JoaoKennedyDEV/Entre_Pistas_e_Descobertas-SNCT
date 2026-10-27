@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cuqvb83a1mdmh"]
+
+[ext_resource type="Texture2D" uid="uid://yv4can2s0piy" path="res://title_screen/Fundo Inicial.png" id="1_dxpbd"]
+[ext_resource type="Texture2D" uid="uid://dw7xwcboj3ka8" path="res://title_screen/Título.png" id="2_2dq6q"]
+
+[node name="TitleScreen" type="Control" unique_id=79606045]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1036589583]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_dxpbd")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=718155727]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 64.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1410638052]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=869221825]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 4
+
+[node name="GameLogo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1977482531]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_2dq6q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1980668900]
+layout_mode = 2
+text = "Começar"
+
+[node name="CreditButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=155310547]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=166966541]
+layout_mode = 2
+
+[node name="Mochi" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=983538926]
+layout_mode = 2
