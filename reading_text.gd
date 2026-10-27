@@ -4,9 +4,10 @@ class_name  ReadingText
 var _step: float = 0.01
 var _id: int = 0
 var data: Dictionary = {}
+var _closing := false
 
 @onready var _dialog: RichTextLabel = $Background/HContainer/VContainer/Dialog
-@onready var _letter_sound: AudioStreamPlayer2D = $LetterSound
+@onready var _letter_sound = $LetterSound
 
 @export_category("Objects")
 #@export var _name: Label = null
@@ -14,9 +15,31 @@ var data: Dictionary = {}
 #@export var _faceset: TextureRect = null
 
 func _ready() -> void:
+	# painel fixo embaixo, centralizado na tela (o pai é uma CanvasLayer)
+	set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM, Control.PRESET_MODE_KEEP_SIZE)
+	offset_top -= 8.0
+	offset_bottom -= 8.0
+	# o som das letras é 2D: sem isso ele ficaria baixo/panorâmico fora do mundo
+	if _letter_sound is AudioStreamPlayer2D:
+		_letter_sound.attenuation = 0.0
+		_letter_sound.panning_strength = 0.0
+		_letter_sound.max_distance = 100000.0
 	_initialize_dialog()
 
+
+## Fecha o diálogo de fora (ex.: jogadora se afastou). Espera o laço de digitação
+## pendente terminar antes de liberar o nó.
+func close() -> void:
+	if _closing:
+		return
+	_closing = true
+	hide()
+	await get_tree().create_timer(0.1).timeout
+	queue_free()
+
 func _process(delta: float) -> void:
+	if _closing:
+		return
 	if Input.is_action_pressed("interact") and _dialog.visible_ratio < 1:
 		_step = 0.001
 		return
@@ -37,7 +60,7 @@ func _initialize_dialog() -> void:
 	while _dialog.visible_ratio < 1:
 		await get_tree().create_timer(_step).timeout
 
-		if not is_inside_tree():
+		if _closing or not is_inside_tree():
 			return
 
 		_dialog.visible_characters += 1

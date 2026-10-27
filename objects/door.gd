@@ -20,7 +20,7 @@ extends Node2D
 ## Segundos de cada fade (escurecer e clarear) na troca de sala.
 @export var fade_time := 0.25
 ## Mostra uma seta quicando no lado norte da porta (sala grande) para indicar o caminho de volta.
-@export var show_return_marker := true
+@export var show_return_marker := false
 ## Posição da ponta da seta, relativa à base da porta. Ajuste para ficar na frente da parede.
 @export var marker_offset := Vector2(0, -134)
 

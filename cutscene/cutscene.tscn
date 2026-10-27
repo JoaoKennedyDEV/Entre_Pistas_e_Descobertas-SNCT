@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ejg5nyfjfsv5"]
+
+[ext_resource type="Script" uid="uid://dq1lq0dwllqbn" path="res://cutscene/cutscene.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bygm5m4qrf85" path="res://cutscene/imagens/frame_01.png" id="2_frame01"]
+[ext_resource type="Texture2D" uid="uid://jqhqk44uhmp2" path="res://cutscene/imagens/frame_02.png" id="3_frame02"]
+[ext_resource type="Texture2D" uid="uid://cpd4luvhw8eil" path="res://cutscene/imagens/frame_03.png" id="4_frame03"]
+[ext_resource type="Texture2D" uid="uid://baii8yf8rnys5" path="res://cutscene/imagens/frame_04.png" id="5_frame04"]
+[ext_resource type="Texture2D" uid="uid://degeukq5uj83t" path="res://cutscene/imagens/frame_05.png" id="6_frame05"]
+[ext_resource type="Texture2D" uid="uid://c04ok5m3pmpc1" path="res://cutscene/imagens/frame_06.png" id="7_frame06"]
+[ext_resource type="Texture2D" uid="uid://t3yvblq8spwm" path="res://cutscene/imagens/frame_07.png" id="8_frame07"]
+[ext_resource type="Texture2D" uid="uid://fr7cf06q56ds" path="res://cutscene/imagens/frame_08.png" id="9_frame08"]
+[ext_resource type="Texture2D" uid="uid://cg5hb64pgnius" path="res://cutscene/imagens/frame_10.png" id="11_frame10"]
+
+[node name="Cutscene" type="Control" unique_id=975633438]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+frames = Array[Texture2D]([ExtResource("2_frame01"), ExtResource("3_frame02"), ExtResource("4_frame03"), ExtResource("5_frame04"), ExtResource("6_frame05"), ExtResource("7_frame06"), ExtResource("8_frame07"), ExtResource("9_frame08"), ExtResource("11_frame10")])
+
+[node name="Background" type="TextureRect" parent="." unique_id=899705776]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="DialoguePanel" type="Panel" parent="." unique_id=112754058]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 236.0
+offset_right = 628.0
+offset_bottom = -8.0
+mouse_filter = 2
+
+[node name="Dialogue" type="Label" parent="." unique_id=687795039]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 244.0
+offset_right = 612.0
+offset_bottom = 308.0
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SkipButton" type="Button" parent="." unique_id=817973996]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 316.0
+offset_right = 190.0
+offset_bottom = 348.0
+text = "PULAR"
+
+[node name="NextButton" type="Button" parent="." unique_id=440533002]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 316.0
+offset_right = 616.0
+offset_bottom = 348.0
+text = "CONTINUAR  →"
+
+[node name="Fade" type="ColorRect" parent="." unique_id=112754059]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

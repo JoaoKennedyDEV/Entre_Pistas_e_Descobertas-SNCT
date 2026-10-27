@@ -41,10 +41,10 @@ size = Vector2(190, 24)
 size = Vector2(93, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c10"]
-size = Vector2(47, 384)
+size = Vector2(47, 362)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c11"]
-size = Vector2(23, 48)
+size = Vector2(23, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c12"]
 size = Vector2(240, 140)
@@ -153,11 +153,11 @@ position = Vector2(16.5, -176)
 shape = SubResource("RectangleShape2D_c09")
 
 [node name="SalaGrande_BancadaDireita" type="CollisionShape2D" parent="Colisoes" unique_id=30191521]
-position = Vector2(456.5, 0)
+position = Vector2(456.5, 11)
 shape = SubResource("RectangleShape2D_c10")
 
 [node name="SalaGrande_Cadeira" type="CollisionShape2D" parent="Colisoes" unique_id=90120881]
-position = Vector2(421.5, 24)
+position = Vector2(421.5, 30.5)
 shape = SubResource("RectangleShape2D_c11")
 
 [node name="GlowGround" type="Node2D" parent="Colisoes/SalaGrande_Cadeira" unique_id=358111932]
@@ -210,6 +210,16 @@ shape = SubResource("RectangleShape2D_c20")
 position = Vector2(-245, 471.75)
 shape = SubResource("RectangleShape2D_c21")
 
+[node name="GlowGround" type="Node2D" parent="Colisoes/Escritorio_BancadaMicroscopio" unique_id=1033964276]
+z_index = 1
+position = Vector2(35, 17.25)
+script = ExtResource("3_j5uqw")
+radius = 21.0
+segments = 10
+glow_color = Color(0.7347261, 0.020420626, 0.5753609, 1)
+pulse_duration = 0.7
+metadata/_custom_type_script = "uid://cfe7wowg02yxn"
+
 [node name="Escritorio_MesaComputador" type="CollisionShape2D" parent="Colisoes" unique_id=1159266972]
 position = Vector2(-245, 437)
 shape = SubResource("RectangleShape2D_c22")
@@ -233,6 +243,16 @@ position = Vector2(-330, 365)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=111671707]
 position = Vector2(-243, 151)
+
+[node name="GlowGround" type="Node2D" parent="Marker2D" unique_id=458121382]
+z_index = 3
+position = Vector2(3, 27)
+script = ExtResource("3_j5uqw")
+radius = 26.0
+segments = 10
+glow_color = Color(0.0776215, 0.43953905, 0.72934586, 1)
+pulse_duration = 0.7
+metadata/_custom_type_script = "uid://cfe7wowg02yxn"
 
 [node name="PostIt" type="Area2D" parent="." unique_id=485839118]
 script = ExtResource("5_a0j3u")

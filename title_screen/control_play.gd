@@ -48,3 +48,4 @@ func efeito_clique() -> void:
 
 func iniciar_jogo() -> void:
 	get_tree().change_scene_to_file("res://management/game_level.tscn")
+	#get_tree().change_scene_to_file("res://cutscene/cutscene.tscn")
